@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="file" name="" id=""  onchange="demo()"><br><br>
+        <input type="submit" class="button" disabled>
+    </form>
+    <p></p>
+    <script>
+        
+        
+         function demo(){
+            var f = document.querySelector("input");
+            v = f.value
+            //document.write(v+"<br>");
+            i =v.lastIndexOf('.');
+            //document.write(i+"<br>")
+            x = v.substring(i+1).toLowerCase();
+            if(x=='jpg' || x=="jpeg" ||x=="png"){
+                document.querySelector("p").innerHTML="valid image file"
+                document.querySelector("p").style.color="green"
+                document.querySelector(".button").removeAttribute("disabled")
+            }
+            else{
+                 f.setAttribute("style","border:2px solid red !important")
+                document.querySelector("p").innerHTML="invalid image file"
+                document.querySelector("p").style.color="red"
+            }
+         }
+    </script>
+</body>
+</html>
